@@ -262,10 +262,11 @@ const HomePage = () => {
         sm:flex-row
         gap-4
         justify-center
+        items-center
         sm:items-stretch
         mt-10'>
           {PRICING_CARDS.map((card)=>(
-            <CustomCard key={card.planType} className={clsx('w-[300px] rounded-2xl dark:bg-black/95 background-blur-3xl relative',{
+            <CustomCard key={card.planType} className={clsx('w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',{
               'border-brand/brand-primaryPurple/70':card.planType=== PRICING_PLANS.proplan,
             })}
             cardHeader={<CardTitle
@@ -295,7 +296,7 @@ const HomePage = () => {
               <CardContent className='p-0'>
                 <span className='font-normal
                 text-2xl'>
-                  {card.price}
+                  ${card.price}
                 </span>
                 {+card.price > 0 ? (
                   <span className='dark:text-washed-purple-800 ml-1'>
@@ -305,6 +306,10 @@ const HomePage = () => {
                 :(
                   ''
                 )}
+                <p className='text-sm dark:text-washed-purple/washed-purple-800'>{card.description}</p>
+              <Button className='whitespace-nowrap w-full mt-4'>
+                {card.planType === PRICING_PLANS.proplan ? 'Go Pro' : 'Get Started'}
+              </Button>
               </CardContent>
             }
             cardFooter={
