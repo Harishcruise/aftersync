@@ -34,6 +34,7 @@ const LoginPage = () => {
       if(error){
         form.reset();
         setSubmitError(error.message);
+        return;
       }
       router.replace('/dashboard');
     }; 
@@ -62,7 +63,7 @@ const LoginPage = () => {
           An all-In-One Collaboration and Productivity Tools.
         </FormDescription>  
 
-        <FormField disabled={isLoading} control={form.control} name="email" render={(field)=>(
+        <FormField disabled={isLoading} control={form.control} name="email" render={({field})=>(
           <FormItem>
           <FormControl>
             <Input type='email' placeholder='Email' {...field}></Input>
@@ -72,7 +73,7 @@ const LoginPage = () => {
         )}>
         </FormField>
 
-        <FormField disabled={isLoading} control={form.control} name="password" render={(field)=>(
+        <FormField disabled={isLoading} control={form.control} name="password" render={({field})=>(
           <FormItem>
           <FormControl>
             <Input type='password' placeholder='Password' {...field}></Input>
