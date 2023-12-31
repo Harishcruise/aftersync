@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import db from '@/lib/supabase/db'
 import { ThemeProvider } from '@/lib/providers/next-theme-provider'
 import { DM_Sans } from 'next/font/google'
 import { twMerge } from 'tailwind-merge'
@@ -18,7 +17,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // console.log(db);
   return (
     <html lang="en">
       <body className={twMerge('bg-background',inter.className)}>

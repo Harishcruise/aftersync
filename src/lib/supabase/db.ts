@@ -21,5 +21,5 @@ const migrateDb = async()=>{
     }
     
 }
-migrateDb();
+// migrateDb();
 export default db;
